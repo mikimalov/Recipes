@@ -1,18 +1,18 @@
 <% @recipes.each do |recipe|%>
-  <div class="row bg-light">
+  <div class="row  ">
       <div class="col-sm-6 ml-5 ">
         <div class="container mt-5">
           <div class=" card ">
-            <div class="card-header text-success">
+            <div class="card-header text-success bg-success">
               <ul class="nav nav-pills card-header-pills">
                 <li class="nav-item">
-                  <%= link_to "Show", recipes_path(recipe), class: "nav-link text-success"%>
+                  <%= link_to "Show", recipes_path(recipe), class: "nav-link text-white"%>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "Edit", edit_recipe_path(recipe), class: "nav-link text-success"%>
+                  <%= link_to "Edit", edit_recipe_path(recipe), class: "nav-link text-white"%>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?'}, class: "nav-link text-success"%>
+                  <%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?'}, class: "nav-link text-dark"%>
                 </li>
               </ul>
             </div>
@@ -22,7 +22,7 @@
             <div class="card-body text-center text-success">
               <%= recipe.description %>
             </div>
-            <div class="card-footer text-muted">
+            <div class="card-footer text-success">
               <strong><%=time_ago_in_words(recipe.created_at)%> ago</strong>
             </div>
           </div>
@@ -45,3 +45,4 @@
     </div>
   </div>
 <%end %>
+
