@@ -2,7 +2,7 @@
   <div class="row text-center">
     <div class="col-sm-8">
       <body class="text-center bg-light">
-        <%= form_with url: root_path, local: true do |form| %>
+        <%= form_with url: login_path, scope: :session, local: true do |form| %>
           <%= image_tag 'salad.jpeg', width: '200px', class: "rounded-circle" %>
           <div class='container-fluid'>
             <h1 class="h3 mb-3 font-weight-8px text-dark">Log in</h1>
@@ -12,9 +12,7 @@
             <%= form.email_field :email, class: "form-control mt-4", placeholder: "Email address" %>
             <%= form.label :password, class: "sr-only" %>
             <%= form.password_field :password, class: "form-control mt-4", placeholder: "Password" %>
-
             <%= form.submit "Log in", class: "btn btn-lg btn-success btn-block mt-5"%>
-
           </div>
         <%end%>
       </body>

@@ -5,8 +5,12 @@
   <div class="navbar-end">
     <div class="navbar-item">
       <div class="buttons">
-         <%= link_to "Log in", new_user_path, class: "btn btn-light" %>
-         <%# <%= link_to "Log in", user_path(@current_user), class: "btn btn-light" %> %>
+        <% if user_present? %>
+          <%= link_to "New Recipe", new_recipe_path, class: "btn btn-light" %>
+          <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-light" %>
+        <% else %>
+          <%= link_to "Log in", new_user_path, class: "btn btn-light" %>
+        <% end %>
       </div>
     </div>
   </div>
