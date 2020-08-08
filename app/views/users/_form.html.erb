@@ -15,16 +15,21 @@
     <h1 class="h3 mb-3 font-weight-8px text-white"><%= heading %></h1>
     <div class="container">
       <%= form.label :full_name, class: "sr-only" %>
-      <%= form.text_field :full_name, class: "form-control mt-4", placeholder: "Full name" %>
+      <%= form.text_field :full_name, class: "form-control mt-2", placeholder: "Full name" %>
       <%= form.label :first_name, class: "sr-only" %>
-      <%= form.text_field :first_name, class: "form-control mt-4", placeholder: "First name" %>
+      <%= form.text_field :first_name, class: "form-control mt-2", placeholder: "First name" %>
       <%= form.label :last_name, class: "sr-only" %>
-      <%= form.text_field :last_name, class: "form-control mt-4", placeholder: "Last name" %>
+      <%= form.text_field :last_name, class: "form-control mt-2", placeholder: "Last name" %>
       <%= form.label :email, class: "sr-only" %>
-      <%= form.email_field :email, class: "form-control mt-4", placeholder: "Email adress" %>
+      <%= form.email_field :email, class: "form-control mt-2", placeholder: "Email adress" %>
+      <%= form.label :password, class: "sr-only" %>
+      <%= form.password_field :password, class: "form-control mt-2", placeholder: "Password" %>
+      <%= form.label :password_confirmation, class: "sr-only" %>
+      <%= form.password_field :password_confirmation, class: "form-control mt-2", placeholder: "Confirm password" %>
     </div>
     <br>
-    <br>
-    <%= form.submit button_name, class: "btn btn-lg btn-success btn-block"%>
+    <div class="container">
+      <%= form.submit button_name, class: "btn btn-lg btn-success btn-block"%>
+    </div>
   </div>
 <%end%>
