@@ -18,11 +18,10 @@
             </div>
             <div class="card-body text-center text-success">
               <strong><%= recipe.title %></strong>
-            </div>
-            <div class="card-body text-center text-success">
               <%= recipe.description %>
             </div>
             <div class="card-footer text-success">
+              <strong>Created by: <%= recipe.user.full_name %></strong>
               <strong><%=time_ago_in_words(recipe.created_at)%> ago</strong>
             </div>
           </div>
