@@ -18,7 +18,8 @@
       </body>
     </div>
     <div class="col-sm-4">
-      <%= render 'form', user: @user, button_name: "Sign up", heading: "Sign up"%>
+      <%= render 'components/errors', model: @user %>
+      <%= render 'components/form', model: @user , button_name: "Sign up", heading: "Sign up"%>
     </div>
   </div>
 </div>

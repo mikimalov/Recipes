@@ -1,0 +1,49 @@
+<%= form_with model: model, local: true do |form| %>
+  <%= image_tag 'sweets.jpeg', width: '150px', class: "rounded-circle" unless local_assigns[:new]%>
+  <div class='container-fluid'>
+    <h1 class="h3 mb-3 font-weight-8px text-white"><%= heading unless local_assigns[:new] %></h1>
+    <div class="container">
+      <% unless local_assigns[:new] %>
+        <%= form.label :full_name, class: "sr-only" %>
+        <%= form.text_field :full_name, class: "form-control mt-2", placeholder: "Full name" %>
+        <%= form.label :first_name, class: "sr-only" %>
+        <%= form.text_field :first_name, class: "form-control mt-2", placeholder: "First name" %>
+        <%= form.label :last_name, class: "sr-only" %>
+        <%= form.text_field :last_name, class: "form-control mt-2", placeholder: "Last name" %>
+        <%= form.label :email, class: "sr-only" %>
+        <%= form.email_field :email, class: "form-control mt-2", placeholder: "Email adress" %>
+        <%= form.label :password, class: "sr-only" %>
+        <%= form.password_field :password, class: "form-control mt-2", placeholder: "Password" %>
+        <%= form.label :password_confirmation, class: "sr-only" %>
+        <%= form.password_field :password_confirmation, class: "form-control mt-2", placeholder: "Confirm password" %>
+      <% else %>
+        <%= form.label :title, class: "sr-only" %>
+        <%= form.text_field :title, class: "form-control ", placeholder: "Your name" %>
+        <%= form.label :description, class: "sr-only" %>
+        <%= form.text_area :description, class: "form-control mt-4", placeholder: "Description" %>
+        <div class="row ">
+          <div class="col-sm-6 mt-5">
+            <%= form.label :ingredient, class: "sr-only" %>
+            <%= form.text_field :title, class: "form-control ", placeholder: "Ingredient" %>
+            <%= form.label :ingredient, class: "sr-only" %>
+            <%= form.text_field :title, class: "form-control mt-2", placeholder: "Ingredient" %>
+            <%= form.label :ingredient, class: "sr-only" %>
+            <%= form.text_field :ingredient, class: "form-control mt-2", placeholder: "Ingredient" %>
+          </div>
+          <div class="col-sm-6 mt-5 ">
+            <%= form.label :title, class: "sr-only" %>
+            <%= form.text_field :title, class: "form-control ", placeholder: "Your name" %>
+            <%= form.label :title, class: "sr-only" %>
+            <%= form.text_field :title, class: "form-control mt-2", placeholder: "Your name" %>
+            <%= form.label :title, class: "sr-only" %>
+            <%= form.text_field :title, class: "form-control mt-2", placeholder: "Your name" %>
+           </div>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <div class="container">
+      <%= form.submit button_name, class: "btn btn-lg btn-success btn-block"%>
+    </div>
+  </div>
+<%end%>
