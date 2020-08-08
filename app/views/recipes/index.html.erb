@@ -1,61 +1,6 @@
 <% @recipes.each do |recipe|%>
-  <div class="row">
-      <div class="col-sm-6 ml-5 ">
-        <div class="container mt-5">
-          <div class=" card ">
-            <div class="card-header text-success bg-success">
-              <ul class="nav nav-pills card-header-pills">
-                <li class="nav-item">
-                  <%= link_to "Show", recipe_path(recipe), class: "nav-link text-white"%>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "Edit", edit_recipe_path(recipe), class: "nav-link text-white"%>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?'}, class: "nav-link text-dark"%>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body text-center text-success">
-              <strong><%= recipe.title %></strong>
-              <%= recipe.description %>
-            </div>
-            <div class="card-footer text-success">
-              <strong>Created by: <%= recipe.user.full_name %></strong>
-              <strong><%=time_ago_in_words(recipe.created_at)%> ago</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card border-success mt-5 ml-5 card-width">
-        <div class="card-body text-success">
-          <h5 class="card-title">Ingredients</h5>
-          <% recipe.ingredients.each do |ingredient| %>
-            <li>
-              <%= ingredient.body %>
-            </li>
-          <% end %>
-        </div>
-        <div class='card-footer'>
-          <%= link_to "Edit ingrediants", edit_recipe_path(recipe), class: 'text-success'%>
-        </div>
-      </div>
-      <div class="card text-white bg-success mt-5 ml-5 card-width">
-        <div class="card-header">Instructions for preparing</div>
-        <div class="card-body">
-          <% recipe.instructions.each do |instruction| %>
-            <ol>
-              <li>
-                <%= instruction.body %>
-              </li>
-            </ol>
-          <% end %>
-        </div>
-        <div class='card-footer bg-success'>
-          <%= link_to "Edit instructions", edit_recipe_path(recipe), class: 'text-white text-centered'%>
-        </div>
-      </div>
-    </div>
+  <div class="ml-5 ">
+    <%= render 'recipes', recipe: recipe %>
   </div>
 <%end %>
 

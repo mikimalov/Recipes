@@ -1,9 +1,9 @@
 <%= form_with model: model, local: true do |form| %>
-  <%= image_tag 'sweets.jpeg', width: '150px', class: "rounded-circle" unless local_assigns[:new]%>
+  <%= image_tag 'sweets.jpeg', width: '150px', class: "rounded-circle centered" unless local_assigns[:nested_form]%>
   <div class='container-fluid'>
-    <h1 class="h3 mb-3 font-weight-8px text-white"><%= heading unless local_assigns[:new] %></h1>
+    <h1 class="h3 mb-3 font-weight-8px text-white text-center"><%= heading if local_assigns[:nested_form] %></h1>
     <div class="container">
-      <% unless local_assigns[:new] %>
+      <% unless local_assigns[:nested_form] %>
         <%= form.label :full_name, class: "sr-only" %>
         <%= form.text_field :full_name, class: "form-control mt-2", placeholder: "Full name" %>
         <%= form.label :first_name, class: "sr-only" %>
@@ -22,14 +22,7 @@
         <%= form.text_field :title, class: "form-control ", placeholder: "Title" %>
         <%= form.label :description, class: "sr-only" %>
         <%= form.text_area :description, class: "form-control mt-4", placeholder: "Description" %>
-        <div class="row ">
-          <div class="col-sm-6 mt-5">
-            <%= render "components/ingredients", form: form %>
-          </div>
-          <div class="col-sm-6 mt-5 ">
-            <%= render "components/instructions", form: form %>
-          </div>
-        </div>
+        <%= render "components/nested_forms", form: form %>
       <% end %>
     </div>
     <br>
