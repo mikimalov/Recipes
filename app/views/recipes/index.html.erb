@@ -41,10 +41,18 @@
         </div>
       </div>
       <div class="card text-white bg-success mt-5 ml-5 card-width">
-        <div class="card-header">Header</div>
+        <div class="card-header">Instructions for preparing</div>
         <div class="card-body">
-          <h5 class="card-title">Success card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <% recipe.instructions.each do |instruction| %>
+            <ol>
+              <li>
+                <%= instruction.body %>
+              </li>
+            </ol>
+          <% end %>
+        </div>
+        <div class='card-footer bg-success'>
+          <%= link_to "Edit instructions", edit_recipe_path(recipe), class: 'text-white text-centered'%>
         </div>
       </div>
     </div>
