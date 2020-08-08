@@ -17,18 +17,14 @@
         <%= form.label :password_confirmation, class: "sr-only" %>
         <%= form.password_field :password_confirmation, class: "form-control mt-2", placeholder: "Confirm password" %>
       <% else %>
+        <%= render 'components/errors', model: model %>
         <%= form.label :title, class: "sr-only" %>
-        <%= form.text_field :title, class: "form-control ", placeholder: "Your name" %>
+        <%= form.text_field :title, class: "form-control ", placeholder: "Title" %>
         <%= form.label :description, class: "sr-only" %>
         <%= form.text_area :description, class: "form-control mt-4", placeholder: "Description" %>
         <div class="row ">
           <div class="col-sm-6 mt-5">
-            <%= form.label :ingredient, class: "sr-only" %>
-            <%= form.text_field :title, class: "form-control ", placeholder: "Ingredient" %>
-            <%= form.label :ingredient, class: "sr-only" %>
-            <%= form.text_field :title, class: "form-control mt-2", placeholder: "Ingredient" %>
-            <%= form.label :ingredient, class: "sr-only" %>
-            <%= form.text_field :ingredient, class: "form-control mt-2", placeholder: "Ingredient" %>
+            <%= render "components/ingredients", form: form %>
           </div>
           <div class="col-sm-6 mt-5 ">
             <%= form.label :title, class: "sr-only" %>

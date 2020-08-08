@@ -29,11 +29,16 @@
         </div>
       </div>
       <div class="card border-success mt-5 ml-5 card-width">
-        <div class="card-header"><%=recipe.title%></div>
         <div class="card-body text-success">
           <h5 class="card-title">Ingredients</h5>
-          <p class="card-text"><%= recipe.ingredients %>
-          </p>
+          <% recipe.ingredients.each do |ingredient| %>
+            <li>
+              <%= ingredient.body %>
+            </li>
+          <% end %>
+        </div>
+        <div class='card-footer'>
+          <%= link_to "Edit ingrediants", edit_recipe_path(recipe), class: 'text-success'%>
         </div>
       </div>
       <div class="card text-white bg-success mt-5 ml-5 card-width">

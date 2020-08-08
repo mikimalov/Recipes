@@ -1,10 +1,10 @@
 <% if model.errors.any? %>
-  <div class="container ">
+  <div class="container text-center">
     <div class="alert alert-error bg-success mt-1">
       <h4>Warning!</h4>
-      <p><%= pluralize(model.errors.count, "error") %> prohibited this user from being saved:</p>
-      <% model.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <p><%= pluralize(model.errors.count, "error") %> prohibited this from being saved:</p>
+      <% model.errors.full_messages.each do |errors| %>
+        <li><%= errors %></li>
       <% end %>
     </div>
   </div>
