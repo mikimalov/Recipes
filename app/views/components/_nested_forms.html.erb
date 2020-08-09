@@ -2,7 +2,7 @@
   <%= form.fields_for :ingredients do |f| %>
     <div class="col-sm-5 mt-3">
       <%= f.label :body, class: "sr-only" %>
-      <%= f.text_field :body, class: "form-control ", placeholder: "Ingredient" %>
+      <%= f.text_field :body, class: "form-control form-color", placeholder: "Ingredient" %>
     </div>
     <div class="col-sm-1 mt-3 ">
       <%= f.check_box :_destroy %>
@@ -12,7 +12,7 @@
   <%= form.fields_for :instructions do |f| %>
     <div class="col-sm-5 mt-2">
       <%= f.label :body, class: "sr-only" %>
-      <%= f.text_field :body, class: "form-control ", placeholder: "Instruction" %>
+      <%= f.text_field :body, class: "form-control form-color", placeholder: "Instruction" %>
     </div>
     <div class="col-sm-1 mt-2 ">
       <%= f.check_box :_destroy %>

@@ -1,15 +1,15 @@
-<nav class="navbar bg-success">
+<nav class="navbar recipe-color">
   <div class="navbar-brand navbar-fixed-top">
-    <%= image_tag 'fruit.jpg', width: '80px'%>
+    <%= link_to "Home page", root_path, class: "btn recipe-color text-white" %>
   </div>
   <div class="navbar-end">
     <div class="navbar-item">
       <div class="buttons">
         <% if user_present? %>
-          <%= link_to "New Recipe", new_recipe_path, class: "btn btn-light" %>
-          <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-light" %>
+          <%= link_to "New Recipe", new_recipe_path, class: "btn recipe-color text-white" %>
+          <%= link_to "Log out", logout_path, method: :delete, class: "btn recipe-color text-white" %>
         <% else %>
-          <%= link_to "Log in", new_user_path, class: "btn btn-light" %>
+          <%= link_to "Log in", new_user_path, class: "btn recipe-color text-white" %>
         <% end %>
       </div>
     </div>

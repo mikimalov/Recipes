@@ -1,41 +1,41 @@
 <div class="row">
   <div class="col-sm-6 ml-5 ">
     <div class="container mt-5">
-      <div class=" card ">
-        <div class="card-header text-success bg-success">
+      <div class=" card recipe-color ">
+        <div class="card-header recipe-faded">
           <ul class="nav nav-pills card-header-pills">
             <% if local_assigns[:show] %>
               <li class="nav-item">
-                <%= link_to "Back", root_path, class: "nav-link text-white"%>
+                <%= link_to "Back", root_path, class: "btn text-white"%>
               </li>
             <% else %>
               <li class="nav-item">
-                <%= link_to "Show", recipe_path(recipe), class: "nav-link text-white"%>
+                <%= link_to "Show", recipe_path(recipe), class: "btn recipe-color ml-2 text-white"%>
               </li>
             <% end %>
             <li class="nav-item">
-              <%= link_to "Edit", edit_recipe_path(recipe), class: "nav-link text-white"%>
+              <%= link_to "Edit", edit_recipe_path(recipe), class: "btn recipe-color ml-2 text-white"%>
             </li>
             <li class="nav-item">
-              <%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?'}, class: "nav-link text-dark"%>
+              <%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?'}, class: "btn recipe-color ml-2 text-white"%>
             </li>
           </ul>
         </div>
-        <div class="card-body text-center text-success">
+        <div class="card-body text-center text-white">
           <strong><%= recipe.title %></strong>
         </div>
-        <div class="card-body text-center text-success">
+        <div class="card-body text-center text-white">
           <%= recipe.description %>
         </div>
-        <div class="card-footer text-success">
+        <div class="card-footer text-white">
           <strong>Created by: <%= recipe.user.full_name %></strong>
           <strong><%=time_ago_in_words(recipe.created_at)%> ago</strong>
         </div>
       </div>
     </div>
   </div>
-  <div class="card border-success mt-5 ml-4 card-width">
-    <div class="card-body text-success">
+  <div class="card recipe-faded mt-5 ml-4 card-width">
+    <div class="card-body text-warning">
       <h5 class="card-title">Ingredients needed</h5>
       <% recipe.ingredients.each do |ingredient| %>
         <li>
@@ -44,10 +44,10 @@
       <% end %>
     </div>
     <div class='card-footer'>
-      <%= link_to "Edit ingrediants", edit_recipe_path(recipe), class: 'text-success'%>
+      <%= link_to "Edit/Delete ingrediants", edit_recipe_path(recipe), class: 'text-warning'%>
     </div>
   </div>
-  <div class="card text-white bg-success mt-5 ml-5 card-width">
+  <div class="card text-white recipe-color mt-5 ml-5 card-width">
     <div class="card-header">Instructions for preparing</div>
     <div class="card-body">
       <% recipe.instructions.each do |instruction| %>
@@ -58,8 +58,8 @@
         </ol>
       <% end %>
     </div>
-    <div class='card-footer bg-success'>
-      <%= link_to "Edit instructions", edit_recipe_path(recipe), class: 'text-white text-centered'%>
+    <div class='card-footer recipe-color'>
+      <%= link_to "Edit/Delete instructions", edit_recipe_path(recipe), class: 'text-white text-centered'%>
     </div>
   </div>
 </div>

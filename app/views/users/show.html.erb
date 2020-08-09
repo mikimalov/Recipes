@@ -1,22 +1,20 @@
-<div class="row ">
-  <div class="container mt-5  ">
-    <div class=" card ">
-      <div class="card-header bg-success">
-        <ul class="nav nav-pills card-header-pills">
-          <li class="nav-item">
-            <%= link_to "Cancel", root_path, class: "nav-link text-white"%>
-          </li>
-        </ul>
-      </div>
-      <div class="card-body text-center">
-        <h3><strong>Wellcome back <%= @user.full_name %></strong></h3>
-      </div>
-      <div class="card-body text-center">
-        <%= @user.email %>
-      </div>
+<div class="container mt-5 centered">
+  <div class=" card ">
+    <div class="card-header bg-success">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <%= link_to "Cancel", root_path, class: "nav-link text-white"%>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body text-center">
+      <h3><strong>Wellcome back <%= @user.full_name %></strong></h3>
+    </div>
+    <div class="card-body text-center">
+      <%= @user.email %>
     </div>
   </div>
-  <% @user.recipes.each do |recipe|%>
-    <%= render 'recipes/recipes', recipe: recipe %>
-  <%end %>
 </div>
+<% @user.recipes.each do |recipe|%>
+  <%= render 'recipes/recipes', recipe: recipe %>
+<%end %>
