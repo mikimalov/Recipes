@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login
+  before_action :is_user_present?, except: [:show]
+
   def new
     @user = User.new
   end
@@ -20,5 +23,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:full_name, :first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+  def is_user_present?
+    if user_present?
+      flash[:danger] = 'Already logged in!'
+      redirect_to user_path(@current_user) and return
+    end
   end
 end

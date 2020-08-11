@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: [:create]
+
   def create
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
@@ -6,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       flash['danger'] = 'Invalid combination of email or password!'
-      redirect_to new_user_path
+      redirect_to login_path
     end
   end
 

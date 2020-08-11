@@ -1,8 +1,4 @@
-<div class="mb-3">
-  <div class=" text-center text-white recipe-color ">
-    <h1 class="font-italic"><strong>Cocktail recipes</strong></h1>
-  </div>
-</div>
+<h1 class="text-center text-white recipe-color font-italic"><strong>Cocktail recipes</strong></h1>
 <% @recipes.each do |recipe|%>
   <div class="ml-5 ">
     <%= render 'recipe', recipe: recipe %>
