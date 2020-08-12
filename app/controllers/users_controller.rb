@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def is_user_present?
-    if user_present?
+    if current_user_present?
       flash[:danger] = 'Already logged in!'
       redirect_to user_path(@current_user) and return
     end

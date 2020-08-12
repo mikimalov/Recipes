@@ -1,5 +1,5 @@
 <% flash.each do |type, msg| %>
-  <div class=" recipe-color text-center text-white font-italic">
-    <h3>Warning! <%= msg %></h3>
+  <div class=" bg-<%= type %> text-center text-white font-italic">
+    <h3><%= msg %></h3>
   </div>
 <% end %>

@@ -6,7 +6,7 @@
           <% unless local_assigns[:show] %>
             <%= link_to "Show", user_recipe_path(recipe.user, recipe), class: "btn recipe-color ml-2 mt-3 text-white font-italic"%>
             <% if equal_with_current_user(recipe.user) %>
-              <%= link_to "Edit", edit_recipe_path(recipe), class: "btn recipe-color ml-2 text-white font-italic" %>
+              <%= link_to "Edit cocktail", edit_recipe_path(recipe), class: "btn recipe-color ml-2 text-white font-italic" %>
               <%= link_to "Delete", recipe_path(recipe), class: "btn recipe-color mt-3 ml-2 text-white font-italic",
               method: :delete, data: { confirm: 'Are you sure you want to delete this cocktail recipe?'}%>
             <% end%>

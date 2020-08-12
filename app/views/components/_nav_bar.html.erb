@@ -5,8 +5,8 @@
   <div class="navbar-end">
     <div class="navbar-item">
       <div class="buttons">
-        <% if user_present? %>
-          <%= link_to "New Recipe", new_recipe_path, class: "btn recipe-color text-white" %>
+        <% if current_user_present? %>
+          <%= link_to "New Cocktail", new_recipe_path, class: "btn recipe-color text-white" %>
           <%= link_to "Log out", logout_path, method: :delete, class: "btn recipe-color text-white" %>
         <% else %>
           <%= link_to "Log in", login_path, class: "btn recipe-color text-white" %>
