@@ -1,0 +1,9 @@
+<div class="container fluid">
+  <h1 class="h2 mt-5 font-weight-8px text-white text-center font-italic">Edit ingredients</h1>
+  <div class="container mt-5 col-sm-15 mr-5 ">
+    <%= form_with model: @recipe, local: true do |form| %>
+      <%= render "components/ingredients", form: form %>
+      <%= form.submit 'Update ingredients', class: "btn btn-lg btn-block recipe-faded font-italic" %>
+    <% end %>
+  </div>
+</div>

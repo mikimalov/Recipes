@@ -33,15 +33,15 @@
         <h5>Ingredients needed for preparing</h5>
       </div>
       <% recipe.ingredients.each do |ingredient| %>
-      <ul class='font-italic'>
-        <li>
-          <%= ingredient.body %>
-        </li>
-      </ul>
+        <ul class='font-italic'>
+          <li>
+            <%= ingredient.body %>
+          </li>
+        </ul>
       <% end %>
     </div>
     <div class='card-footer'>
-      <%= link_to "Edit/Delete ingrediants", edit_recipe_path(recipe), class: 'text-warning font-italic'%>
+      <%= link_to "Edit/Delete ingrediants", recipe_edit_ingredients_path(recipe), class: 'text-warning font-italic'%>
     </div>
   </div>
   <div class="card text-white recipe-color mt-5 ml-5 card-width">
@@ -50,15 +50,15 @@
     </div>
     <div class="card-body">
       <% recipe.instructions.each do |instruction| %>
-      <ol class="mb-0 font-italic">
-        <li>
-          <%= instruction.body %>
-        </li>
-      </ol>
+        <ol class="mb-0 font-italic">
+          <li>
+            <%= instruction.body %>
+          </li>
+        </ol>
       <% end %>
     </div>
     <div class='card-footer recipe-color'>
-      <%= link_to "Edit/Delete instructions", edit_recipe_path(recipe), class: 'text-white font-italic'%>
+      <%= link_to "Edit/Delete instructions", recipe_edit_instructions_path(recipe), class: 'text-white font-italic'%>
     </div>
   </div>
 </div>

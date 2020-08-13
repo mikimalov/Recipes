@@ -22,7 +22,14 @@
         <%= form.text_field :title, class: "form-control form-color", placeholder: "Title" %>
         <%= form.label :description, class: "sr-only" %>
         <%= form.text_area :description, class: "form-control form-color mt-4", placeholder: "Description" %>
-        <%= render "components/nested_forms", form: form %>
+        <div class='row'>
+          <div class="col-sm-5 mt-4 ml-5">
+            <%= render "components/ingredients", form: form %>
+          </div>
+          <div class="col-sm-5 mt-4 ml-5">
+            <%= render "components/instructions", form: form %>
+          </div>
+        </div>
       <% end %>
     </div>
     <br>
