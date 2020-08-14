@@ -161,7 +161,7 @@ RSpec.describe 'Recipes' do
       let(:user) { create(:user) }
       let(:recipe) { create(:recipe, user: user) }
 
-      it 'can delete the recipe' do
+      it 'can delete the recipe ' do
         get '/login'
 
         post_params = {

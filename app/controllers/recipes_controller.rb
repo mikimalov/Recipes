@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipes_params)
     @recipe.user = current_user
     if @recipe.save
-      redirect_to @recipe.user
+      redirect_to user_recipe_path(@recipe.user, @recipe)
     else
       render :new
     end
@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
   def update
     if @recipe.update_attributes(recipes_params)
       @recipe.save
-      redirect_to @recipe.user
+      redirect_to user_recipe_path(@recipe.user, @recipe)
     else
       render :edit
     end

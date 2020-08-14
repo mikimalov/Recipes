@@ -41,7 +41,9 @@
       <% end %>
     </div>
     <div class='card-footer'>
-      <%= link_to "Edit/Delete ingredients", recipe_edit_ingredients_path(recipe), class: 'text-warning font-italic'%>
+      <% if equal_with_current_user(recipe.user) %>
+        <%= link_to "Edit/Delete ingredients", recipe_edit_ingredients_path(recipe), class: 'text-warning font-italic'%>
+      <% end %>
     </div>
   </div>
   <div class="card text-white recipe-color mt-5 ml-5 card-width">
@@ -50,15 +52,17 @@
     </div>
     <div class="card-body">
       <% recipe.instructions.each do |instruction| %>
-        <ol class="mb-0 font-italic">
+        <ul class="mb-0 font-italic">
           <li>
             <%= instruction.body %>
           </li>
-        </ol>
+        </ul>
       <% end %>
     </div>
     <div class='card-footer recipe-color'>
-      <%= link_to "Edit/Delete instructions", recipe_edit_instructions_path(recipe), class: 'text-white font-italic'%>
+      <% if equal_with_current_user(recipe.user) %>
+        <%= link_to "Edit/Delete instructions", recipe_edit_instructions_path(recipe), class: 'text-white font-italic'%>
+      <% end %>
     </div>
   </div>
 </div>
