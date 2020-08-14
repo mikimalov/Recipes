@@ -79,7 +79,7 @@ RSpec.describe "RecipesInteraction" do
   end
 
   describe 'Deleting a recipe' do
-    it 'deletes the cocktail' do
+    it 'deletes the cocktail and its ingredients and instructions' do
 
       click_on 'Delete'
 
