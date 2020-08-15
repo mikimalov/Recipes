@@ -1,26 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 User.create([
   {
     full_name: 'Miki Malov',
     first_name: 'Miki',
     last_name: 'Malov',
-    email: 'mikimalov29@gmail.com',
+    email: 'mikimalov30@gmail.com',
     password: 'mikimiki',
     password_confirmation: 'mikimiki',
+    created_at: '14.08.2020'
+  },
+  {
+    full_name: 'Vesna Malova',
+    first_name: 'Vesna',
+    last_name: 'Malova',
+    email: 'vesnamalova50@gmail.com',
+    password: 'vesnavesna',
+    password_confirmation: 'vesnavesna',
     created_at: '14.08.2020'
   }
 ])
 
 Recipe.create([
   {
-    user_id: User.last.id,
+    user_id: User.first.id,
     title: 'Long island',
     description: 'Fine summer cocktail served in long fine glass!',
     created_at: '14.08.2020'
@@ -75,7 +76,7 @@ Instruction.create([
 
 Recipe.create([
   {
-    user_id: User.last.id,
+    user_id: User.first.id,
     title: 'Blue Lagoon',
     description: 'Blue strong cocktail in long fine glass, perfect for parties!',
     created_at: '14.08.2020'
@@ -184,18 +185,6 @@ Instruction.create([
   {
     recipe_id: Recipe.last.id,
     body: 'Decorating with peace of fresh pineapple.'
-  }
-])
-
-User.create([
-  {
-    full_name: 'Vesna Malova',
-    first_name: 'Vesna',
-    last_name: 'Malova',
-    email: 'vesnamalova49@gmail.com',
-    password: 'vesnavesna',
-    password_confirmation: 'vesnavesna',
-    created_at: '14.08.2020'
   }
 ])
 

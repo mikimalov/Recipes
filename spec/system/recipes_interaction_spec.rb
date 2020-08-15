@@ -9,7 +9,6 @@ RSpec.describe "RecipesInteraction" do
     log_in(user)
 
     click_on "New Cocktail"
-
     create_cocktail
   end
 
@@ -17,8 +16,10 @@ RSpec.describe "RecipesInteraction" do
     it 'creates and shows the newly created cocktail' do
       title = 'New Cocktail'
       description = 'Summer Cocktail'
-      ingredient = 'Ingredient 1'
-      instruction = 'Instruction 1'
+      ingredient = 'Ingredient'
+      instruction = 'Instruction'
+
+      click_on "Home page"
 
       expected = page.has_link?('Edit cocktail')
 
@@ -33,6 +34,7 @@ RSpec.describe "RecipesInteraction" do
       title1 = 'Long island'
       description1 = 'Strong and fresh one!'
 
+      click_on "Back"
       click_on "Edit cocktail"
 
       within('form') do
@@ -81,6 +83,7 @@ RSpec.describe "RecipesInteraction" do
   describe 'Deleting a recipe' do
     it 'deletes the cocktail and its ingredients and instructions' do
 
+      click_on 'Back'
       click_on 'Delete'
 
       expect(page).to have_content('Cocktail recipes')

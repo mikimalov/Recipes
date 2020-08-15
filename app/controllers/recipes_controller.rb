@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   skip_before_action :require_login, only: [:index, :show]
   before_action :find_recipe, only: [:show, :edit, :update, :destroy]
-  before_action :find_recipe_id, only: [:edit_ingredients, :edit_instructions]
+  before_action :find_recipe_with_recipe_id, only: [:edit_ingredients, :edit_instructions]
   before_action :is_user_valid?, except: [:index, :show, :new, :create]
 
   def index
@@ -41,8 +41,8 @@ class RecipesController < ApplicationController
   end
 
   def update
-    if @recipe.update_attributes(recipes_params)
-      @recipe.save
+    @recipe.update_attributes(recipes_params)
+    if @recipe.save
       redirect_to user_recipe_path(@recipe.user, @recipe)
     else
       render :edit
@@ -66,7 +66,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
-  def find_recipe_id
+  def find_recipe_with_recipe_id
     @recipe = Recipe.find(params[:recipe_id])
   end
 

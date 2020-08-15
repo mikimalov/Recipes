@@ -1,24 +1,61 @@
-# README
+# RECIPES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It's summer, it's time for ***COCKTAIL PARTY!!!***
+Perfect new web page about making cocktails.
+Choose your own, or any other user's recipe and make one of most famous cocktails.
+Learn how to make excellent cocktails for you and your friends, following instructions of the recipes, and mixing its ingredients.
 
-Things you may want to cover:
+## Use
 
-* Ruby version
+1. Create new recipes everyday.
+2. Edit your recipes, its title, description, ingredients or instructions.
+3. Delete your own recipes if you have better offer then the first one.
+4. View other users's recipes that appears on your Home page.
+5. Visit other user pages and learn new cocktails.
 
-* System dependencies
+## Requirements needed
 
-* Configuration
+- ruby 2.6.6
+- rails >= 6.0.3.2
+- bootstrap ~> 4.5.0
+- bcrypt ~> 3.1.7
+- rspec-rails ~> 4.0.1
 
-* Database creation
+## Instalation
 
-* Database initialization
+***First, clone application from GitHub:***
 
-* How to run the test suite
+```
+git clone https://github.com/mikimalov/Recipes.git
+```
+***Change directory to your new downloaded project:***
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+cd Recipes
+```
+***Open your gem file and add all of the gems required, then run:***
 
-* Deployment instructions
+```
+bundle install
+```
 
-* ...
+## Initialize the database
+
+***Before starting your application, you can initialize database by running:***
+
+```
+rails db:seed
+```
+
+***It will create a few basic recipes for you, and gives you motivation for starting create your own.***
+
+## Run application
+
+***Start your server by running:***
+
+```
+rails server
+```
+***Now, you will be able to see all of the recipes, and create yours.***
+
+***## HAVE FUN!***
