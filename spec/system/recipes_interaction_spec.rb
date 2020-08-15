@@ -38,7 +38,6 @@ RSpec.describe "RecipesInteraction" do
       click_on "Edit cocktail"
 
       within('form') do
-
         fill_in "Title", with: title1
         fill_in "Description", with: description1
 
@@ -50,27 +49,25 @@ RSpec.describe "RecipesInteraction" do
     end
 
     it 'edits and shows edited cocktail ingredients' do
-      ingredient1 = 'New ingredient'
+      ingredient1 = 'Pineapple juice'
 
       click_on "Edit/Delete ingredient"
 
       within('form') do
-
         fill_in "recipe[ingredients_attributes][0][body]", with: ingredient1
 
         click_on "Update"
       end
 
-      expect(page).to have_content(ingredient1)
+      expect(page).to have_content('Pineapple juice')
     end
 
     it 'edits and shows edited cocktail instructions' do
-      instruction1 = 'New instruction'
+      instruction1 = 'Shaking with ice!'
 
       click_on "Edit/Delete instruction"
 
       within('form') do
-
         fill_in "recipe[instructions_attributes][2][body]", with: instruction1
 
         click_on "Update"
@@ -82,7 +79,6 @@ RSpec.describe "RecipesInteraction" do
 
   describe 'Deleting a recipe' do
     it 'deletes the cocktail and its ingredients and instructions' do
-
       click_on 'Back'
       click_on 'Delete'
 

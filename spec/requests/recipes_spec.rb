@@ -76,7 +76,7 @@ RSpec.describe 'Recipes' do
       let(:recipe) { create(:recipe, user: user) }
       let(:login_user) { create(:user) }
 
-      it 'redirects back when editing' do
+      it 'redirects back when trying to edit' do
         get '/login'
 
         post_params = {
@@ -97,7 +97,7 @@ RSpec.describe 'Recipes' do
         expect(response).to redirect_to(user_path(login_user))
       end
 
-      it 'redirects back when updating' do
+      it 'redirects back when trying to update' do
         get '/login'
 
         post_params = {
@@ -161,7 +161,7 @@ RSpec.describe 'Recipes' do
       let(:user) { create(:user) }
       let(:recipe) { create(:recipe, user: user) }
 
-      it 'can delete the recipe ' do
+      it 'can delete the recipe' do
         get '/login'
 
         post_params = {
@@ -187,7 +187,6 @@ RSpec.describe 'Recipes' do
     context "when the recipe's user is different then the logged in User" do
       let(:user) { create(:user) }
       let(:recipe) { create(:recipe, user: user) }
-
       let(:login_user) { create(:user) }
 
       it 'redirects  back to login_user path' do

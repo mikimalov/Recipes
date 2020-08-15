@@ -3,7 +3,7 @@ User.create([
     full_name: 'Miki Malov',
     first_name: 'Miki',
     last_name: 'Malov',
-    email: 'mikimalov30@gmail.com',
+    email: 'mikimalov32@gmail.com',
     password: 'mikimiki',
     password_confirmation: 'mikimiki',
     created_at: '14.08.2020'
@@ -12,7 +12,7 @@ User.create([
     full_name: 'Vesna Malova',
     first_name: 'Vesna',
     last_name: 'Malova',
-    email: 'vesnamalova50@gmail.com',
+    email: 'vesnamalova57@gmail.com',
     password: 'vesnavesna',
     password_confirmation: 'vesnavesna',
     created_at: '14.08.2020'
@@ -23,7 +23,7 @@ Recipe.create([
   {
     user_id: User.first.id,
     title: 'Long island',
-    description: 'Fine summer cocktail served in long fine glass!',
+    description: 'Summer refreshing cocktail served in long fine glass!',
     created_at: '14.08.2020'
   }
 ])
@@ -78,7 +78,7 @@ Recipe.create([
   {
     user_id: User.first.id,
     title: 'Blue Lagoon',
-    description: 'Blue strong cocktail in long fine glass, perfect for parties!',
+    description: 'Blue colored and strong cocktail in long fine glass, perfect for parties!',
     created_at: '14.08.2020'
   }
 ])
@@ -132,8 +132,8 @@ Instruction.create([
 Recipe.create([
   {
     user_id: User.last.id,
-    title: 'Bahama mama',
-    description: 'Sweet summer cocktail served in small glass!',
+    title: 'Bahamma mama',
+    description: 'Sweet cocktail, for every season, served in small glass!',
     created_at: '14.08.2020'
   }
 ])
@@ -235,7 +235,7 @@ Recipe.create([
   {
     user_id: User.last.id,
     title: 'Sex on the beach',
-    description: 'Refreshing summer cocktail served in long fine glass',
+    description: 'Summer cocktail, based on orange, served in long fine glass!',
     created_at: '14.08.2020'
   }
 ])

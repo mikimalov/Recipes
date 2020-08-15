@@ -21,11 +21,13 @@ RSpec.describe Recipe do
 
     it "is expected to destroy ingredients when recipe destroyed" do
       create_list(:ingredient, ingredients_count, recipe: recipe)
+
       expect { recipe.destroy }.to change { Ingredient.count }.by(-ingredients_count)
     end
 
     it "is expected to destroy instructions when recipe destroyed" do
       create_list(:instruction, instructions_count, recipe: recipe)
+      
       expect { recipe.destroy }.to change { Instruction.count }.by(-instructions_count)
     end
   end

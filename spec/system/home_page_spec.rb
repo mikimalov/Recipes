@@ -46,7 +46,7 @@ RSpec.describe "HomePage" do
     end
   end
 
-  context 'when a recipe is present' do
+  describe 'when a recipe is present' do
     let!(:recipe) { create(:recipe, title: 'Long island', description: 'Mixing in long fine glass!') }
 
     before do
@@ -60,7 +60,7 @@ RSpec.describe "HomePage" do
     end
 
     it 'shows the recipe description' do
-      expected = page.has_content?(recipe.description)
+      expected = page.has_content?('Mixing in long fine glass!')
 
       expect(expected).to be true
     end
